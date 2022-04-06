@@ -7,7 +7,7 @@ pcWinCounter = 0
 
 while True:
     # Prompt user to pick a weapon
-    userInput = input("Pick your weapon (Rock, Paper, or Scissors)")
+    userInput = input("Pick your weapon (rock, paper, or scissors)")
 
     # Have PC pick a random weapon
     weapons = ["rock", "paper", "scissors"]
@@ -16,6 +16,14 @@ while True:
     # Print user and PC choices
     print("You chose", userInput)
     print("computer chose", pcChoice)
+
+# Check if either player has 3 wins yet to end the game
+    if userWinCounter == 3:
+        print("Game over, you win!")
+        break
+    elif pcWinCounter == 3:
+        print("Game over, computer wins!")
+        break
 
     # Compare PC and User choices and decide how to return that info
     # Step one check if its a tie now so I dont have to later, if tied then skip to end and restart
@@ -43,5 +51,3 @@ while True:
         else:
             print("Rock beats scissors, you lose")
             pcWinCounter += 1
-
-    print(userWinCounter)
