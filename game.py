@@ -5,9 +5,10 @@ import random
 userWinCounter = 0
 pcWinCounter = 0
 
+# g Game continues until loops breaks below due to one side getting 3 wins
 while True:
     # Prompt user to pick a weapon
-    userInput = input("Pick your weapon (rock, paper, or scissors)")
+    userInput = input("Pick your weapon (rock, paper, or scissors)").lower()
 
     # Have PC pick a random weapon
     weapons = ["rock", "paper", "scissors"]
@@ -26,7 +27,7 @@ while True:
         break
 
     # Compare PC and User choices and decide how to return that info
-    # Step one check if its a tie now so I dont have to later, if tied then skip to end and restart
+    # Step one check if its a tie now so I dont have to later, if tied no points awarded and restart
     if userInput == pcChoice:
         print("It's a tie, no one wins, Try again")
     # step 2 is to check each case against the only 2 other options to see who wins
